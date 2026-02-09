@@ -26,7 +26,7 @@ namespace MagicVilla_VillaAPI.Repository
         {
             _appDbContext = appDbContext;
             _mapper = mapper;
-            secretKey = configuration.GetValue<string>("ApiSettings:Secret");
+            secretKey = configuration["ApiSettingsSecret"];
             _userManager = userManager;
             _roleManager = roleManager;
         }

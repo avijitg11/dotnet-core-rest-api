@@ -8,7 +8,7 @@ namespace MagicVilla_VillaAPI.Extensions
     {
         public static void JWTAuthenticationContainer(this WebApplicationBuilder builder)
         {
-			var key = builder.Configuration.GetValue<string>("ApiSettings:Secret");
+			var key = builder.Configuration["ApiSettingsSecret"];
             builder.Services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
